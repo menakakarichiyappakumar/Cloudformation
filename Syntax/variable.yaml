@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: This template descripes how to use varaibale/parameter in cloudformation
+
+Parameters:
+  InstanceType:
+    Description: Type of Instance to be created  
+    Type: String 
+    Default: t2.micro #Assigning Default values nd can be changed
+
+  AmiId:
+    Description: AMI id to create instance from
+    Type: String #Ask input form the user
+
+Resources:
+  EC2Instance:
+      Type: AWS::EC2::Instance
+      Properties:
+        InstanceType: !Ref InstanceType #Refering to the variable
+        ImageId: !Ref AmiId

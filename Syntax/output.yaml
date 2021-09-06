@@ -1,0 +1,13 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: This template descripes how to output vaules in cloudformation
+Resources:
+  EC2Instance:
+      Type: AWS::EC2::Instance
+      Properties:
+        InstanceType: t2.micro
+        ImageId: ami-0a23ccb2cdd9286bb #AMI id will differ from region to region and instance type to type
+
+Outputs: 
+  Instanceid:
+    Description: ID of the instance Created
+    Value: !Ref EC2Instance
